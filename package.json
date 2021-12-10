@@ -30,7 +30,8 @@
   },
   "exports": "./index.js",
   "scripts": {
-    "fix": "eslint --fix"
+    "fix": "eslint --fix",
+    "build": "node buildExports.js"
   },
   "dependencies": {
     "discord.js": "^13.3.1",

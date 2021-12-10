@@ -23,7 +23,8 @@ export default class Bot extends Discord.Client {
 
   async login(token) {
     if (!this.listenerCount('interactionCreate')) this.on('interactionCreate', this._onInteractionCreate);
-    return super.login(token);
+    await super.login(token);
+    return this;
   }
 
   async _onInteractionCreate(interaction) {
