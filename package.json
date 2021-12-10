@@ -1,0 +1,46 @@
+{
+  "name": "@ruinguard/core",
+  "version": "0.1.1",
+  "description": "The core of the RuinGuard modular bot system",
+  "keywords": [
+    "modular",
+    "ruinguard"
+  ],
+  "homepage": "https://github.com/SayuMains/RuinGuard#readme",
+  "bugs": "https://github.com/SayuMains/RuinGuard/issues",
+  "type": "module",
+  "author": {
+    "name": "AroLeaf",
+    "url": "https://leaf.moe/"
+  },
+  "contributors": [
+    {
+      "name": "MRDGH2821",
+      "url": "https://bit.ly/mrdgh2821"
+    },
+    {
+      "name": "Zyla",
+      "url": "https://github.com/Eilyz"
+    }
+  ],
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SayuMains/RuinGuard.git",
+    "directory": "core/"
+  },
+  "exports": "./index.js",
+  "scripts": {
+    "fix": "eslint --fix"
+  },
+  "dependencies": {
+    "discord.js": "^13.3.1",
+    "file-ez": "^0.2.2",
+    "keyv": "^4.0.4",
+    "node-fetch": "^3.1.0",
+    "xregexp": "^5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0"
+  }
+}
