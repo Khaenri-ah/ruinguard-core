@@ -29,7 +29,7 @@ const regex = {
 export default class EmbedFactory {
   constructor(options={}) {
     this.splashes = options.splashes;
-    this.color = options.color;
+    this.color = options.color||0x2f3136;
   }
 
   randomSplash() {
