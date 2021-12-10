@@ -6,8 +6,8 @@
     "modular",
     "ruinguard"
   ],
-  "homepage": "https://github.com/SayuMains/RuinGuard#readme",
-  "bugs": "https://github.com/SayuMains/RuinGuard/issues",
+  "homepage": "https://github.com/Khaenri-ah/ruinguard-core#readme",
+  "bugs": "https://github.com/Khaenri-ah/ruinguard-core/issues",
   "type": "module",
   "author": {
     "name": "AroLeaf",
@@ -26,8 +26,7 @@
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SayuMains/RuinGuard.git",
-    "directory": "core/"
+    "url": "https://github.com/Khaenri-ah/ruinguard-core.git"
   },
   "exports": "./index.js",
   "scripts": {
