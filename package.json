@@ -41,6 +41,7 @@
     "xregexp": "^5.1.0"
   },
   "devDependencies": {
+    "eslint-config-ruinguard": "^1.0.0",
     "eslint": "^8.3.0"
   }
 }
