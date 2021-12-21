@@ -1,7 +1,7 @@
 import Discord from 'discord.js';
 import CommandManager from './CommandManager.js';
-import MessageContent from './MessageContent.js';
 import EmbedFactory from './EmbedFactory.js';
+import Keyv from 'keyv';
 // import EventManager from './EventManager.js';
 
 export default class Bot extends Discord.Client {
@@ -11,11 +11,10 @@ export default class Bot extends Discord.Client {
 
     this.owners = options.owners ?? [options.owner];
     this.embeds = new EmbedFactory(options.embeds);
+    this.db = new Keyv(options.keyv);
 
     this.modules = options.modules??[];
-
     this.commands = new CommandManager(this, this.modules.flatMap(m => m.commands));
-
     for (const event of this.modules.flatMap(m => m.events)) {
       event.init(this);
     }
@@ -33,11 +32,11 @@ export default class Bot extends Discord.Client {
 
     try {
       const res = await command.run(interaction);
-      if (res instanceof MessageContent) return interaction.replied ? interaction.followUp(res.toMsg()) : interaction.reply(res.toMsg());
+      if (res?.toMsg) return interaction.send(res);
     } catch (err) {
       console.log(err);
       const res = interaction.embed('Oops! An error has occured');
-      return interaction.replied ? interaction.followUp(res.toMsg()) : interaction.reply(res.toMsg());
+      return interaction.send(res);
     }
   }
 }

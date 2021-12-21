@@ -8,7 +8,6 @@ import _CommandManager from './src/CommandManager.js';
 import _CooldownManager from './src/CooldownManager.js';
 import _EmbedFactory from './src/EmbedFactory.js';
 import _Event from './src/Event.js';
-import _MessageContent from './src/MessageContent.js';
 import _Module from './src/Module.js';
 import _Oauth from './src/Oauth.js';
 
@@ -21,7 +20,6 @@ export default {
   CooldownManager: _CooldownManager,
   EmbedFactory: _EmbedFactory,
   Event: _Event,
-  MessageContent: _MessageContent,
   Module: _Module,
   Oauth: _Oauth,
 };
@@ -33,7 +31,6 @@ export const CommandManager = _CommandManager;
 export const CooldownManager = _CooldownManager;
 export const EmbedFactory = _EmbedFactory;
 export const Event = _Event;
-export const MessageContent = _MessageContent;
 export const Module = _Module;
 export const Oauth = _Oauth;
 

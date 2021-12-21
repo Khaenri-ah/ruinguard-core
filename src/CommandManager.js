@@ -6,7 +6,7 @@ export default class CommandManager {
     this.cache = new Discord.Collection(commands.map(c => [c.name, c]));
   }
 
-  resolve(name) {
-    return this.cache.get(name.name||name);
+  resolve(command) {
+    return this.cache.get(command.name||command);
   }
 }
