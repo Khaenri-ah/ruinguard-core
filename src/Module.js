@@ -6,36 +6,37 @@ import Command from './Command.js';
 import Event from './Event.js';
 
 export default class Module {
-  constructor(options={}) {
+  constructor(data={}) {
     return new Promise(async res => {
-      this.commands = await Module.loadCommands(options.commands||[]);
-      this.events = await Module.loadEvents(options.events||[]);
-      this.intents = new Discord.Intents(options.intents??0);
-      this.options = options.options??{};
+      this.name = data.name;
+      this.commands = await Module.loadCommands(data.commands||[]);
+      this.events = await Module.loadEvents(data.events||[]);
+      this.intents = new Discord.Intents(data.intents||[]);
+      this.options = data.options??{};
       res(this);
     });
   }
 
   static async loadCommands(commands) {
     if (commands instanceof Command) return [commands];
-    if (Array.isArray(commands)) return commands;
+    if (Array.isArray(commands)) return (await Promise.all(commands.map(c => Module.loadCommands(c)))).flat();
 
     if (typeof commands !== 'string') throw new TypeError('commands must be an array, a Command, or a string');
     if (!Path.isAbsolute(commands)) throw new Error('if commands is a string, it must be an absolute path');
 
     const files = await getDir(commands).recursive();
-    return Promise.all(files.map(async file => file.import()));
+    return Module.loadCommands(await Promise.all(files.map(async file => file.import())));
   }
 
   static async loadEvents(events) {
-    if (events instanceof Event) return Module.loadEvents([events]);
-    if (Array.isArray(events)) return events;
+    if (events instanceof Event) return [events];
+    if (Array.isArray(events)) return (await Promise.all(events.map(e => Module.loadEvents(e)))).flat();
 
     if (typeof events !== 'string') throw new TypeError('events must be an array, a Event, or a string');
     if (!Path.isAbsolute(events)) throw new Error('if events is a string, it must be an absolute path');
 
     const files = await getDir(events).recursive();
-    return Promise.all(files.map(async file => file.import()));
+    return Module.loadEvents(await Promise.all(files.map(async file => file.import())));
   }
 
 

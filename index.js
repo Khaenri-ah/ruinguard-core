@@ -10,6 +10,7 @@ import _EmbedFactory from './src/EmbedFactory.js';
 import _Event from './src/Event.js';
 import _Module from './src/Module.js';
 import _Oauth from './src/Oauth.js';
+import _RatelimitManager from './src/RatelimitManager.js';
 
 export default {
   ...Discord,
@@ -22,6 +23,7 @@ export default {
   Event: _Event,
   Module: _Module,
   Oauth: _Oauth,
+  RatelimitManager: _RatelimitManager,
 };
 
 export const Bot = _Bot;
@@ -33,6 +35,7 @@ export const EmbedFactory = _EmbedFactory;
 export const Event = _Event;
 export const Module = _Module;
 export const Oauth = _Oauth;
+export const RatelimitManager = _RatelimitManager;
 
 export const BaseClient = Discord.BaseClient;
 export const Client = Discord.Client;

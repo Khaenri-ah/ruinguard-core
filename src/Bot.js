@@ -2,7 +2,6 @@ import Discord from 'discord.js';
 import CommandManager from './CommandManager.js';
 import EmbedFactory from './EmbedFactory.js';
 import Keyv from 'keyv';
-// import EventManager from './EventManager.js';
 
 export default class Bot extends Discord.Client {
   constructor(options={}) {
@@ -13,7 +12,7 @@ export default class Bot extends Discord.Client {
     this.embeds = new EmbedFactory(options.embeds);
     this.db = new Keyv(options.keyv);
 
-    this.modules = options.modules??[];
+    this.modules = options.modules ?? [];
     this.commands = new CommandManager(this, this.modules.flatMap(m => m.commands));
     for (const event of this.modules.flatMap(m => m.events)) {
       event.init(this);

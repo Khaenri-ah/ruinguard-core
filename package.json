@@ -1,6 +1,6 @@
 {
   "name": "@ruinguard/core",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The core of the RuinGuard modular bot system",
   "keywords": [
     "modular",
@@ -34,7 +34,7 @@
     "build": "node buildExports.js"
   },
   "dependencies": {
-    "discord.js": "^13.3.1",
+    "discord.js": "^13.4.0",
     "file-ez": "^0.2.2",
     "keyv": "^4.0.4",
     "node-fetch": "^3.1.0",

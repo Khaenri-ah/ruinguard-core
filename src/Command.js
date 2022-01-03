@@ -16,10 +16,27 @@ export default class Command {
 
   async run(interaction) {
     if (this.flags.has(1<<0) && !interaction.client.owners.includes(interaction.user.id)) return;
-    if (this.flags.has(1<<1) && !interaction.guild) return interaction.embed('This command can only be used in a server.');
 
-    if (!interaction.member.permissionsIn(interaction.channel).has(this.permissions.user)) return interaction.embed('You\'re missing permissions.');
-    if (!interaction.guild.me.permissionsIn(interaction.channel).has(this.permissions.self)) return interaction.embed('I\'m missing permissions.');
+    if (this.flags.has(1<<1) && !interaction.guild) {
+      return interaction.reply({
+        content: 'This command can only be used in a server.',
+        ephemeral: true,
+      });
+    }
+
+    if (!interaction.member.permissionsIn(interaction.channel).has(this.permissions.user)) {
+      return interaction.reply({
+        content: 'You\'re missing permissions.',
+        ephemeral: true,
+      });
+    }
+
+    if (!interaction.guild.me.permissionsIn(interaction.channel).has(this.permissions.self)) {
+      return interaction.reply({
+        content: 'I\'m missing permissions.',
+        ephemeral: true,
+      });
+    }
 
     return this.function(interaction);
   }
