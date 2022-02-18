@@ -1,16 +1,16 @@
 
 import Discord from 'discord.js';
 
-import _Bot from './src/Bot.js';
-import _Command from './src/Command.js';
-import _CommandFlags from './src/CommandFlags.js';
-import _CommandManager from './src/CommandManager.js';
-import _CooldownManager from './src/CooldownManager.js';
-import _EmbedFactory from './src/EmbedFactory.js';
-import _Event from './src/Event.js';
-import _Module from './src/Module.js';
-import _Oauth from './src/Oauth.js';
-import _RatelimitManager from './src/RatelimitManager.js';
+import _Bot from './dist/esm/Bot.js';
+import _Command from './dist/esm/Command.js';
+import _CommandFlags from './dist/esm/CommandFlags.js';
+import _CommandManager from './dist/esm/CommandManager.js';
+import _CooldownManager from './dist/esm/CooldownManager.js';
+import _EmbedFactory from './dist/esm/EmbedFactory.js';
+import _Event from './dist/esm/Event.js';
+import _Module from './dist/esm/Module.js';
+import _Oauth from './dist/esm/Oauth.js';
+import _RatelimitManager from './dist/esm/RatelimitManager.js';
 
 export default {
   ...Discord,
@@ -60,6 +60,7 @@ export const Options = Discord.Options;
 export const Permissions = Discord.Permissions;
 export const RateLimitError = Discord.RateLimitError;
 export const SnowflakeUtil = Discord.SnowflakeUtil;
+export const Sweepers = Discord.Sweepers;
 export const SystemChannelFlags = Discord.SystemChannelFlags;
 export const ThreadMemberFlags = Discord.ThreadMemberFlags;
 export const UserFlags = Discord.UserFlags;
@@ -81,6 +82,7 @@ export const GuildInviteManager = Discord.GuildInviteManager;
 export const GuildManager = Discord.GuildManager;
 export const GuildMemberManager = Discord.GuildMemberManager;
 export const GuildMemberRoleManager = Discord.GuildMemberRoleManager;
+export const GuildScheduledEventManager = Discord.GuildScheduledEventManager;
 export const GuildStickerManager = Discord.GuildStickerManager;
 export const MessageManager = Discord.MessageManager;
 export const PermissionOverwriteManager = Discord.PermissionOverwriteManager;
@@ -128,6 +130,7 @@ export const GuildEmoji = Discord.GuildEmoji;
 export const GuildMember = Discord.GuildMember;
 export const GuildPreview = Discord.GuildPreview;
 export const GuildPreviewEmoji = Discord.GuildPreviewEmoji;
+export const GuildScheduledEvent = Discord.GuildScheduledEvent;
 export const GuildTemplate = Discord.GuildTemplate;
 export const Integration = Discord.Integration;
 export const IntegrationApplication = Discord.IntegrationApplication;
@@ -143,6 +146,7 @@ export const MessageAttachment = Discord.MessageAttachment;
 export const MessageButton = Discord.MessageButton;
 export const MessageCollector = Discord.MessageCollector;
 export const MessageComponentInteraction = Discord.MessageComponentInteraction;
+export const MessageContextMenuInteraction = Discord.MessageContextMenuInteraction;
 export const MessageEmbed = Discord.MessageEmbed;
 export const MessageMentions = Discord.MessageMentions;
 export const MessagePayload = Discord.MessagePayload;
@@ -170,6 +174,7 @@ export const ThreadChannel = Discord.ThreadChannel;
 export const ThreadMember = Discord.ThreadMember;
 export const Typing = Discord.Typing;
 export const User = Discord.User;
+export const UserContextMenuInteraction = Discord.UserContextMenuInteraction;
 export const VoiceChannel = Discord.VoiceChannel;
 export const VoiceRegion = Discord.VoiceRegion;
 export const VoiceState = Discord.VoiceState;

@@ -1,25 +1,39 @@
-import { Collection } from '@ruinguard/core';
+import { Collection } from 'discord.js';
+
+interface LimitOptions {
+  duration: number,
+  limit: number,
+}
+
+interface Limit {
+  t: number,
+  l: number,
+  c: any[],
+}
 
 export default class RatelimitManager {
-  constructor(limits) {
+  limits: LimitOptions[];
+  cache: Collection<any, Limit[]>;
+
+  constructor(limits: LimitOptions[]) {
     if (!Array.isArray(limits)) limits = [limits];
     this.limits = limits;
-    this.cache = new Collection();
+    this.cache = new Collection<any, Limit[]>();
   }
 
-  get(id) {
-    return this.cache.ensure(id, () => this.limits.map(limit => ({ t: Date.now() + limit.duration, l: limit.limit, c: [] })));
+  get(id: any) {
+    return this.cache.ensure(id, () => this.limits.map(limit => ({ t: Date.now() + limit.duration, l: limit.limit, c: [] }) as Limit));
   }
 
-  set(id, limit, data) {
+  set(id: any, limit: number, data: Limit) {
     this.get(id)[limit] = data;
   }
 
-  check(id) {
+  check(id: any) {
     return this.get(id).find(l => l.l <= 0 && l.t >= Date.now());
   }
 
-  call(id, { limit = 0, cache } = {}) {
+  call(id: any, { limit = 0, cache }: { limit?: number, cache?: any } = {}) {
     const lim = this.get(id)[limit];
     if (lim.t < Date.now()) {
       lim.t = Date.now() + this.limits[limit].duration;
@@ -32,7 +46,7 @@ export default class RatelimitManager {
   }
 
 
-  clear(id, limit) {
+  clear(id: any, limit: number) {
     if (limit === undefined) return this.cache.delete(id);
     this.set(id, limit, { t: Date.now() + this.limits[limit].duration, l: this.limits[limit].limit, c: [] });
   }

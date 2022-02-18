@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "es2022",
+    "target": "es6",
+    "outDir": "dist/",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "declaration": true
+  },
+  "include": ["src/**/*"]
+}
