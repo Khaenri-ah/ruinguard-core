@@ -4,8 +4,18 @@
     "target": "es6",
     "outDir": "dist/",
     "moduleResolution": "Node",
-    "noImplicitAny": true,
-    "declaration": true
+    "noImplicitAny": true
   },
-  "include": ["src/**/*"]
+  "typedocOptions": {
+    "entryPoints": ["./src/index.ts"],
+    "name": "Index",
+    "sort": ["instance-first", "alphabetical"],
+    "media": "docs/assets",
+    "disableSources": true,
+    "hideBreadcrumbs": true,
+    "hideInPageTOC": true,
+    "excludeExternals": true,
+    "out": "docs/src"
+  },
+  "include": ["./src/**/*"]
 }

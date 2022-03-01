@@ -10,7 +10,7 @@ import CommandManager from './CommandManager';
 import EmbedFactory, { EmbedFactoryOptions } from './EmbedFactory';
 import Module from './Module';
 
-interface BotOptions extends ClientOptions {
+export interface BotOptions extends ClientOptions {
   modules?: Module[],
   embeds?: EmbedFactoryOptions,
   owner?: string,

@@ -41,7 +41,7 @@ declare global {
 }
 
 
-interface RichEmbed {
+export interface RichEmbed {
   author?: EmbedAuthorData,
   title?: string,
   url?: string,
@@ -55,7 +55,7 @@ interface RichEmbed {
   toMsg?(): object,
 }
 
-interface RichEmbedOptions {
+export interface RichEmbedOptions {
   author?: EmbedAuthorData,
   title?: string,
   url?: string,
@@ -68,7 +68,7 @@ interface RichEmbedOptions {
   timestamp?: number,
 }
 
-interface CreateEmbedOptions {
+export interface CreateEmbedOptions {
   splash?: boolean,
 }
 

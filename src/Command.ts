@@ -22,17 +22,17 @@ declare module 'discord.js' {
   }
 }
 
-interface CommandOptionPermissions {
+export interface CommandOptionPermissions {
   user?: Permissions,
   self?: Permissions,
 }
 
-interface CommandPermissions {
+export interface CommandPermissions {
   user: Readonly<BitField<PermissionString, bigint>>,
   self: Readonly<BitField<PermissionString, bigint>>,
 }
 
-interface CommandOptions {
+export interface CommandOptions {
   data: ApplicationCommandData,
   run(interaction: BaseCommandInteraction): any,
   flags: CommandFlags,

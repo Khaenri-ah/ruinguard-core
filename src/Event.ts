@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 
-interface EventOptions {
+export interface EventOptions {
   event: string,
   name?: string,
   once?: boolean,

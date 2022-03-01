@@ -6,10 +6,10 @@ import * as Path from 'path';
 import Command from './Command';
 import Event from './Event';
 
-type CommandsResolvable = string | Command | CommandsResolvable[];
-type EventsResolvable = string | Event | EventsResolvable[];
+export type CommandsResolvable = string | Command | CommandsResolvable[];
+export type EventsResolvable = string | Event | EventsResolvable[];
 
-interface ModuleOptions {
+export interface ModuleOptions {
   name?: string,
   commands?: Command[],
   events?: Event[],
@@ -17,12 +17,12 @@ interface ModuleOptions {
   options?: object,
 }
 
-interface RegisterCommandOptions {
+export interface RegisterCommandOptions {
   app: string,
   token: string,
 }
 
-interface RegisterGuildCommandOptions extends RegisterCommandOptions {
+export interface RegisterGuildCommandOptions extends RegisterCommandOptions {
   guild: string,
 }
 

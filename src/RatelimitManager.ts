@@ -1,31 +1,31 @@
 import { Collection } from 'discord.js';
 
-interface LimitOptions {
+export interface RatelimitOptions {
   duration: number,
   limit: number,
 }
 
-interface Limit {
+export interface Ratelimit {
   t: number,
   l: number,
   c: any[],
 }
 
 export default class RatelimitManager {
-  limits: LimitOptions[];
-  cache: Collection<any, Limit[]>;
+  limits: RatelimitOptions[];
+  cache: Collection<any, Ratelimit[]>;
 
-  constructor(limits: LimitOptions[]) {
+  constructor(limits: RatelimitOptions[]) {
     if (!Array.isArray(limits)) limits = [limits];
     this.limits = limits;
-    this.cache = new Collection<any, Limit[]>();
+    this.cache = new Collection<any, Ratelimit[]>();
   }
 
   get(id: any) {
-    return this.cache.ensure(id, () => this.limits.map(limit => ({ t: Date.now() + limit.duration, l: limit.limit, c: [] }) as Limit));
+    return this.cache.ensure(id, () => this.limits.map(limit => ({ t: Date.now() + limit.duration, l: limit.limit, c: [] }) as Ratelimit));
   }
 
-  set(id: any, limit: number, data: Limit) {
+  set(id: any, limit: number, data: Ratelimit) {
     this.get(id)[limit] = data;
   }
 
