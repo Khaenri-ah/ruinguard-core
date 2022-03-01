@@ -26,6 +26,8 @@ export default class Bot extends Discord.Client {
   }
 
   async _onInteractionCreate(interaction) {
+    if (!interaction.isApplicationCommand()) return;
+
     const command = this.commands.resolve(interaction.commandName);
     if (!command) return;
 
@@ -34,7 +36,7 @@ export default class Bot extends Discord.Client {
       if (res?.toMsg) return interaction.send(res);
     } catch (err) {
       console.log(err);
-      const res = interaction.embed('Oops! An error has occured');
+      const res = interaction.embed('Oops! An error has occurred');
       return interaction.send(res);
     }
   }
