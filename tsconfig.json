@@ -9,7 +9,7 @@
   "typedocOptions": {
     "entryPoints": ["./src/index.ts"],
     "name": "Index",
-    "sort": ["instance-first", "alphabetical"],
+    "sort": ["instance-first", "source-order"],
     "media": "docs/assets",
     "disableSources": true,
     "hideBreadcrumbs": true,

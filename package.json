@@ -4,6 +4,9 @@
   "description": "The core of the RuinGuard modular bot system",
   "keywords": [
     "modular",
+    "discord",
+    "bot",
+    "discord.js",
     "ruinguard"
   ],
   "homepage": "https://github.com/Khaenri-ah/ruinguard-core#readme",
@@ -38,7 +41,6 @@
   },
   "dependencies": {
     "discord.js": "^13.4.0",
-    "file-ez": "^0.2.2",
     "keyv": "^4.0.4",
     "node-fetch": "^3.1.0",
     "xregexp": "^5.1.0"
