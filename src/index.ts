@@ -8,8 +8,9 @@ export * from './CommandManager';
 export * from './CooldownManager';
 export * from './Event';
 export * from './Module';
-export * from './Oauth';
 export * from './RatelimitManager';
+
+export * as Oauth from './Oauth';
 declare module 'discord.js' {
   interface Interaction {
     /**

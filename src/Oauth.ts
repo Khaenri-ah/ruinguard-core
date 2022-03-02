@@ -54,5 +54,3 @@ export async function guilds(options: TokenOptions): Promise<object[]> {
   if (!res.ok) throw new Error(res.status.toString());
   return res.json() as Promise<object[]>;
 }
-
-export default { user, refresh, token, guilds };
