@@ -4,9 +4,6 @@ import fetch from 'node-fetch';
 import { Command } from './Command';
 import { Event } from './Event';
 
-export type CommandsResolvable = string | Command | CommandsResolvable[];
-export type EventsResolvable = string | Event | EventsResolvable[];
-
 export interface ModuleOptions {
   /** The name of the new module */
   name?: string,
