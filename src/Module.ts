@@ -1,8 +1,8 @@
 import { Intents } from 'discord.js';
 import fetch from 'node-fetch';
 
-import Command from './Command';
-import Event from './Event';
+import { Command } from './Command';
+import { Event } from './Event';
 
 export type CommandsResolvable = string | Command | CommandsResolvable[];
 export type EventsResolvable = string | Event | EventsResolvable[];
@@ -32,7 +32,7 @@ export interface RegisterGuildCommandOptions extends RegisterCommandOptions {
   guild: string,
 }
 
-export default class Module {
+export class Module {
   /** The name of this module */
   name: string;
   /** The commands belonging to this module */

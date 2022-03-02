@@ -11,7 +11,7 @@ export interface EventOptions {
   run(...args: any[]): any,
 }
 
-export default class Event {
+export class Event {
   /** The discord.js event this event triggers on */
   event: string;
   /** The name of this event */

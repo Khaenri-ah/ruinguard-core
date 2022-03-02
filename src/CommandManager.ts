@@ -1,7 +1,7 @@
 import { Client, Collection } from 'discord.js';
-import Command from './Command';
+import { Command } from './Command';
 
-export default class CommandManager {
+export class CommandManager {
   /** The client that this manager belongs to */
   client: Client;
   /** The commands this manager is currently managing */

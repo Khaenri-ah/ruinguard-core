@@ -6,8 +6,8 @@ import {
 } from 'discord.js';
 import * as Keyv from 'keyv';
 
-import CommandManager from './CommandManager';
-import Module from './Module';
+import { CommandManager } from './CommandManager';
+import { Module } from './Module';
 
 export interface BotOptions extends ClientOptions {
   /** The modules this bot should load */
@@ -20,7 +20,7 @@ export interface BotOptions extends ClientOptions {
   keyv?: Keyv.Options<any>,
 }
 
-export default class Bot extends Client {
+export class Bot extends Client {
   /** The owner(s) of this bot */
   owners: string[];
   /** A keyv instance for quick key-value storage */
@@ -40,7 +40,7 @@ export default class Bot extends Client {
    * ```
    */
   constructor(options: BotOptions = { intents: 0 }) {
-    options.intents = new Intents(options.modules.map(m => m.intents));
+    options.intents = new Intents(options.modules?.map(m => m.intents) || []);
     super(options);
 
     this.owners = options.owners ?? [options.owner];

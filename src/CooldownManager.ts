@@ -1,6 +1,6 @@
 import * as Keyv from 'keyv';
 
-export default class CooldownManager {
+export class CooldownManager {
   /** The default cooldown in miliseconds */
   cooldown: number;
   /** All current cooldowns */

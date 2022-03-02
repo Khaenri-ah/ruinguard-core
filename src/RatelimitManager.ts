@@ -16,7 +16,7 @@ export interface Ratelimit {
   c: any[],
 }
 
-export default class RatelimitManager {
+export class RatelimitManager {
   /** The settings for this ratelimit manager */
   limit: RatelimitOptions;
   /** All currently managed limits */

@@ -5,9 +5,9 @@ import {
   BitField,
   BaseCommandInteraction,
 } from 'discord.js';
-import Bot from './Bot';
+import { Bot } from './Bot';
 
-import CommandFlags from './CommandFlags';
+import { CommandFlags } from './CommandFlags';
 
 export interface CommandOptionPermissions {
   /** Permissions a user needs to invoke this command */
@@ -34,7 +34,7 @@ export interface CommandOptions {
   permissions: CommandOptionPermissions,
 }
 
-export default class Command {
+export class Command {
   /** The data sent to discord when registering this command */
   data: ApplicationCommandData;
   /** The name of this command */
