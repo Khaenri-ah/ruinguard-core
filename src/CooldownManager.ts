@@ -10,7 +10,7 @@ export default class CooldownManager {
    * Creates a new cooldown manager
    * @param cooldown The default cooldown in miliseconds
    */
-  constructor(cooldown: number = 0) {
+  constructor(cooldown = 0) {
     this.cooldown = cooldown;
     this.cooldowns = new Keyv<number>();
   }

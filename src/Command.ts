@@ -5,6 +5,7 @@ import {
   BitField,
   BaseCommandInteraction,
 } from 'discord.js';
+import Bot from './Bot';
 
 import CommandFlags from './CommandFlags';
 
@@ -39,7 +40,7 @@ export default class Command {
   /** The name of this command */
   name: string;
   /** {@link CommandOptions.run} */
-  function: Function;
+  function: (interaction: BaseCommandInteraction<'cached'>) => any;
   /** This command's flags */
   flags: CommandFlags;
   /** The permissions required to invoke or execute this command */
@@ -56,7 +57,7 @@ export default class Command {
    *     name: 'ping',
    *     description: 'hello?',
    *   },
-   * 
+   *
    *   run(interaction) {
    *     return interaction.send('pong!');
    *   }
@@ -80,7 +81,7 @@ export default class Command {
    * @returns The return value of [Command.function](#function)
    */
   async run(interaction: BaseCommandInteraction<'cached'>) {
-    if (this.flags.has(1<<0) && !interaction.client.owners.includes(interaction.user.id)) return;
+    if (this.flags.has(1<<0) && interaction.client instanceof Bot && !interaction.client.owners.includes(interaction.user.id)) return;
 
     if (this.flags.has(1<<1) && !interaction.guild) {
       return interaction.reply({

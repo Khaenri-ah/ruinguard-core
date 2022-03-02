@@ -1,4 +1,4 @@
-import { Client } from "discord.js";
+import { Client } from 'discord.js';
 
 export interface EventOptions {
   /** The discord.js event the new event should trigger on */
@@ -19,7 +19,7 @@ export default class Event {
   /** If this command should be called every time the event is received, or only the first time */
   repeat: boolean;
   /** {@link EventOptions.run} */
-  function(...args: any[]): any {};
+  function: (...args: any[]) => any;
 
   /**
    * Creates a new event

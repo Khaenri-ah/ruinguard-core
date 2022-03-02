@@ -1,4 +1,15 @@
 /* eslint-disable */
 module.exports = {
-  extends: 'ruinguard',
+  root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    '@typescript-eslint',
+  ],
+  extends: [
+    'ruinguard',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
+  }
 }
