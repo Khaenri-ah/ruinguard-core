@@ -4,7 +4,7 @@ import {
   Intents,
   Interaction,
 } from 'discord.js';
-import * as Keyv from 'keyv';
+import Keyv from 'keyv';
 
 import { CommandManager } from './CommandManager';
 import { Module } from './Module';

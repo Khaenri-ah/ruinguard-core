@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "module": "es2022",
-    "target": "es2017",
-    "outDir": "dist/",
-    "moduleResolution": "Node",
-    "noImplicitAny": true
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "target": "esnext",
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "moduleResolution": "Node"
   },
   "typedocOptions": {
     "entryPoints": ["./src/index.ts"],
@@ -17,5 +19,5 @@
     "excludeExternals": true,
     "out": "docs/src"
   },
-  "include": ["./src/**/*"]
+  "include": ["src/**/*"]
 }
