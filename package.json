@@ -32,6 +32,7 @@
   },
   "scripts": {
     "fix": "eslint --fix",
+    "fix:all": "eslint . --fix --ignore-path .gitignore",
     "build": "npx rollup -c",
     "build:all": "npm run build:code && npm run build:docs",
     "build:docs": "npx typedoc && mkdocs build -f docs/mkdocs.yml"
