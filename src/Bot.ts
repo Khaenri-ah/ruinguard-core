@@ -105,7 +105,7 @@ export class Bot extends Client {
       if (res?.toMsg) return interaction.send(res);
     } catch (err) {
       console.log(err);
-      return interaction.send({ embeds: [{ description: 'Oops! An error has occured' }] });
+      return interaction.send({ embeds: [{ description: 'Oops! An error has occurred' }] });
     }
   }
 }
