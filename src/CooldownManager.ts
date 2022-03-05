@@ -1,4 +1,4 @@
-import * as Keyv from 'keyv';
+import Keyv from 'keyv';
 
 export class CooldownManager {
   /** The default cooldown in milliseconds */
