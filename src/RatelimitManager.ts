@@ -1,7 +1,7 @@
 import { Collection } from 'discord.js';
 
 export interface RatelimitOptions {
-  /** Ratelimit interval in miliseconds */
+  /** Ratelimit interval in milliseconds */
   duration: number,
   /** Amount of allowed calls per duration */
   limit: number,
