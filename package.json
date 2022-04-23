@@ -21,7 +21,8 @@
       "url": "https://bit.ly/mrdgh2821"
     }
   ],
-  "main": "./index.js",
+  "main": "./dist/index.js",
+	"module": "./dist/index.mjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/Khaenri-ah/ruinguard-core.git"
